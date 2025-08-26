@@ -5,7 +5,7 @@ import google.generativeai as genai
 import re
 
 # Set your Gemini API Key
-genai.configure(api_key="AIzaSyDaVywEqMGTZPuQTCnk3NRuHVjKyy9bzx8")  # Replace with your actual Gemini API key
+genai.configure(api_key="")  # Replace with your actual Gemini API key
 
 app = FastAPI()
 
@@ -95,5 +95,6 @@ Return only the SQL query. Do not return any explanations or markdown.
 
     except Exception as e:
         return {"error": f"Server error: {e}"}
+
 
 
