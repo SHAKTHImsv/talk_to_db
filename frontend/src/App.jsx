@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 export default function App() {
   const [prompt, setPrompt] = useState('');
   const [responseData, setResponseData] = useState(null);
@@ -19,7 +21,7 @@ export default function App() {
     setResponseData(null);
 
     try {
-      const res = await fetch('http://localhost:8000/query', {
+      const res = await fetch(`${API_URL}/query`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt, connection }),
