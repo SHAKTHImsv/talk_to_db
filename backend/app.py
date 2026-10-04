@@ -24,6 +24,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def root():
+    return {
+        "status": "ok",
+        "message": "AI SQL Assistant API is running"
+    }
+
 # Create engine from user's connection details
 def create_dynamic_engine(conn):
     try:
